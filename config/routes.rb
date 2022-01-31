@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
+  
 
   get '/login'    => 'session#new'     # show the login form
   post '/login'   => 'session#create'  # form submits to here, performs login, redirect
@@ -9,6 +10,9 @@ Rails.application.routes.draw do
   get '/projects'     => 'projects#index'
   get '/projects/:id' => 'projects#show', as: 'project'
 
+  # get '/:user/projects/new' => 'projects#index', as: 'new_project'
+  # get '/:user/projects' => 'projects#index'
+  # get '/:user/projects/:id' => 'projects#show', as: 'project'
 
   resources :libraries
 

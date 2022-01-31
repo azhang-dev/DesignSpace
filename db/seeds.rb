@@ -21,6 +21,18 @@ The original structural details such as the concrete ceiling and pillars were ke
 
 p8 = Project.create! title: 'Wuhan Panlong Plaza Yin Xing Cinema', location:'Honk Kong', description: 'The Wuhan Panlong Plaza Yinxing Cinema, designed by One Plus Partnership Ltd., applies the theory of projection as a theme, subtracting projections from the overall volume and creating an irregular and tilted structure. Every surface is in a grey-scale color palette chosen for its calming effect. The use of Acoustic panels on the walls with lighting in between creates an illusion of 3-D space.', image_url: 'https://www.re-thinkingthefuture.com/wp-content/uploads/2020/01/A465-20-BEST-INTERIOR-PROJECTS-WUHAN-PANLONG-PLAZA-YINXINH-CINEMA-IMAGE-1.jpg'
 
+p9 = Project.create! title: 'Black Star Pastry', location:'Shanghai', description: 'Shanghai-based Linehouse designed the space to evoke the feeling of being in space.
+
+"The ground floor stirs up the incredible sensation of being aboard a spaceship," said the studio.The studio covered the walls of the cafe in stainless steel shelving that holds thousands of meteorites.
+
+The shelving extends across the ceiling to form an arched form that the studio described as "an exploration of gravity vs weightlessness".', image_url: 'http://linehousedesign.com/assets/images/projects/blackstar-pastry-shanghai/Linehouse_BlackStarPastry_012_LO-RES.jpg'
+
+p10 = Project.create! title: 'WeWork Weihai Lu', location:'Shanghai', description: 'The existing site is a combination of a brick historical building with further industrial additions that have been made over the years. The reception is located in this in-between zone of the old and new. Linehouse played with this narrative in the design. The reception counter is clad in heritage wood paneling, surrounded by a concrete base. A bronze metal structure hangs lighting and creates leaners. Behind the reception, guests are greeted with a neon sign ‘Ring For Service’ contained in a cabinet of curiosities, painted in a light blue.
+
+The existing steel structure is painted ivy green, with a new black metal and black stained OSB handrail leaner wrapping the triple height space, allowing guests to be spectators to the activities below.
+
+', image_url: 'http://linehousedesign.com/assets/images/projects/wework-weihai/wework_shanghai_linehouse_002.jpg'
+
 puts "created #{ Project.count } projects."
 puts "title of projects: #{ p1.title }"
 
@@ -50,7 +62,7 @@ puts "Created #{ User.count } users."
 
 #ASSOCIATIONS USERS to PROJECTS
 
-u1.projects << p1
+u1.projects << p1 << p9 << p10
 u2.projects << p2
 u3.projects << p3
 u4.projects << p4

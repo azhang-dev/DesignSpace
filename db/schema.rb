@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_31_064634) do
+ActiveRecord::Schema.define(version: 2022_01_31_233227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,11 @@ ActiveRecord::Schema.define(version: 2022_01_31_064634) do
   create_table "projects_styles", force: :cascade do |t|
     t.integer "style_id"
     t.integer "project_id"
+  end
+
+  create_table "projects_users", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "user_id"
   end
 
   create_table "styles", force: :cascade do |t|

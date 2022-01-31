@@ -16,7 +16,7 @@ class SessionController < ApplicationController
       # credentials are correct - successful login!
       session[:user_id] = user.id
 
-      redirect_to root_path   # back to the home page
+      redirect_to projects_path   # back to the home page
 
     else
 

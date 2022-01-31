@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
   
+  #############ONLY USER'S PROJECTS##############
+
   before_action :check_if_logged_in, except: [:index, :show]
 
   def new
@@ -7,10 +9,6 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    # project = Project.create project_params
-    # project.user_id = @current_user.id  # OR: project.user = @current_user
-    # project.save  # NOT saved to the DB until we do this!
-
     @project = Project.new project_params
     @project.user_id = @current_user.id
     @project.save
@@ -20,14 +18,6 @@ class ProjectsController < ApplicationController
       # all good
       redirect_to projects_path
     else
-      # redirect_to new_library_path # this empties the form!
-
-      # We can render the template of some OTHER action here
-      # In this case we are in :create, but we are asking to render
-      # the :new template
-      # This will provide the template with the already-filled out
-      # form fields, so the user doesn't have to type out all the
-      # correct ones again
       render :new
     end
 
@@ -35,7 +25,7 @@ class ProjectsController < ApplicationController
   end # create()
 
   def index
-    @projects = Project.all
+    
   end
 
   def show
