@@ -1,0 +1,15 @@
+<h2><%= @projects.title %></h2>
+
+<p>
+<strong>Location: </strong>
+<%= @projects.location %> 
+</p>
+
+<p>
+<strong>Description: </strong>
+<%= @projects.description %> 
+</p>
+
+
+<%= image_tag @projects.image_url, alt: @projects.title, class: "project_image" %>
+

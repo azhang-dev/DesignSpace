@@ -1,0 +1,15 @@
+.web_logo{
+    text-decoration: none;
+}
+
+.index_image{
+max-height:200px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    display: inline-block;
+}
