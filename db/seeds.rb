@@ -25,13 +25,13 @@ p9 = Project.create! title: 'Black Star Pastry', location:'Shanghai', descriptio
 
 "The ground floor stirs up the incredible sensation of being aboard a spaceship," said the studio.The studio covered the walls of the cafe in stainless steel shelving that holds thousands of meteorites.
 
-The shelving extends across the ceiling to form an arched form that the studio described as "an exploration of gravity vs weightlessness".', image_url: 'http://linehousedesign.com/assets/images/projects/blackstar-pastry-shanghai/Linehouse_BlackStarPastry_012_LO-RES.jpg'
+The shelving extends across the ceiling to form an arched form that the studio described as "an exploration of gravity vs weightlessness".', image_url: 'https://static.dezeen.com/uploads/2022/01/linehouse-black-star-pastry-shanghai-china-interiors_dezeen_2364_col_8-852x568.jpg'
 
 p10 = Project.create! title: 'WeWork Weihai Lu', location:'Shanghai', description: 'The existing site is a combination of a brick historical building with further industrial additions that have been made over the years. The reception is located in this in-between zone of the old and new. Linehouse played with this narrative in the design. The reception counter is clad in heritage wood paneling, surrounded by a concrete base. A bronze metal structure hangs lighting and creates leaners. Behind the reception, guests are greeted with a neon sign ‘Ring For Service’ contained in a cabinet of curiosities, painted in a light blue.
 
 The existing steel structure is painted ivy green, with a new black metal and black stained OSB handrail leaner wrapping the triple height space, allowing guests to be spectators to the activities below.
 
-', image_url: 'http://linehousedesign.com/assets/images/projects/wework-weihai/wework_shanghai_linehouse_002.jpg'
+', image_url: 'https://images.adsttc.com/media/images/589d/d42b/e58e/ce84/e900/01e9/slideshow/15._Linehouse-WeWork_Weihai_Lu-lo.jpg?1486738468'
 
 puts "created #{ Project.count } projects."
 puts "title of projects: #{ p1.title }"
