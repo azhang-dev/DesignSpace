@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   
   #############ONLY USER'S PROJECTS##############
 
-  before_action :check_if_logged_in, except: [:index, :show]
+  before_action :check_if_logged_in, except: [:show]
 
   def new
     @project = Project.new
@@ -30,7 +30,8 @@ class ProjectsController < ApplicationController
 
   def show
     # fetch_user  # sets @current_user
-    @projects = Project.find params[:id]
+    @project = Project.find params[:id]
+  
   end
 
   def edit

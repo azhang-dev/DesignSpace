@@ -7,7 +7,9 @@ class User < ApplicationRecord
 
   has_many :projects
 
-  has_and_belongs_to_many :library_projects, class_name: "Project"
+  has_many :libraries
+
+  #has_and_belongs_to_many :library_projects, class_name: "Project"
   # You can't leave the email field blank! (How would you login?) ... it also has to be unqiue
   validates :email, presence: true, uniqueness: true 
 end

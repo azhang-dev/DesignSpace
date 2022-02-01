@@ -1,2 +1,10 @@
-<h1>Libraries#show</h1>
+<h1>Library: <%= @library.name %> </h1>
 
+<ul>
+  <% @library.projects.each do |l| %>
+    <li>
+      <%= link_to l.title, project_path(l.id) %>
+      |
+    </li>
+  <% end %>
+</ul> 

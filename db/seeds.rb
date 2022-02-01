@@ -72,9 +72,11 @@ u7.projects << p7
 u8.projects << p8
 
 #TEST ASSOCIATIONS:
+# users -< projects
 
 puts "Testing users -< projects"
 puts " • the project '#{ Project.first.title }' is designed by '#{ Project.first.user.name }'"
+
 
 ###############################
 
@@ -116,5 +118,25 @@ l1 = Library.create! name: 'LivingRoom Collection'
 l2 = Library.create! name: 'Restaurant Collection'
 
 puts "Created #{ Library.count } libraries"
+
+
+
+
+#ASSOCIATIONS
+#LIBRARY -< projects
+l1.projects << p2 << p3 << p4
+l2.projects << p5 << p6 << p7 << p8
+
+#TEST ASSOCIATIONS
+puts "Testing libraries >-< projects"
+puts " • the library '#{ l1.name }' has projects: '#{ l1.projects.pluck(:title).join(', ')}' "
+
+###############
+# User -< libraries
+u1.libraries << l1 << l2
+
+puts "Testing User -< Libraries"
+puts " • the library '#{ l1.name }' belongs to '#{ l1.user.name}' "
+puts "User '#{ Library.first.user.name }' has libraries: '#{ User.first.libraries.pluck(:name).join(', ') }'"
 
 

@@ -7,7 +7,11 @@ class PagesController < ApplicationController
     
   end
 
+  def show
+    # fetch_user  # sets @current_user
+    @project = Project.find params[:id]
   
+  end
 
 
   

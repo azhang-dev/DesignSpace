@@ -39,6 +39,8 @@ class LibrariesController < ApplicationController
   end
 
   def show
+    @library = Library.find params[:id]
+    
   end
 
   def edit
@@ -67,7 +69,7 @@ class LibrariesController < ApplicationController
     # Check if the update worked - it might fail due to the same validation errors
     # as the create
     if @library.update library_params
-      redirect_to mixtape_path(@library)
+      redirect_to library_path(@library)
     else
       render :edit  # show the edit form again, pre-filled (and also with @library.errors)
     end
