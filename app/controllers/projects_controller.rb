@@ -18,6 +18,10 @@ class ProjectsController < ApplicationController
         @project.images << req["public_id"]
       end
     end
+   if params[:project][:image].present?
+      req = Cloudinary::Uploader.upload params[:project][:image]
+      @project.image = req["public_id"]
+   end
    @project.save
 
     # Did the above save work, or did it fail due to a validation error?
@@ -69,13 +73,17 @@ class ProjectsController < ApplicationController
         @project.images << req["public_id"]
       end
     end
+    if params[:project][:image].present?
+      req = Cloudinary::Uploader.upload params[:project][:image]
+      @project.image = req["public_id"]
+   end
     @project.update_attributes(project_params)
     @project.save
 
     # Check if the update worked - it might fail due to the same validation errors
     # as the create
     if @project.update project_params
-      redirect_to mixtape_path(@project)
+      redirect_to project_path(@project)
     else
       render :edit  # show the edit form again, pre-filled (and also with @project.errors)
     end

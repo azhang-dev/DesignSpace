@@ -2,7 +2,7 @@ print "Creating projects...."
 
 Project.destroy_all
 
-p1 = Project.create! title: 'John Anthony', location:'China', description: 'John Anthony is a contemporary dim sum restaurant located in Hong Kong. The design of the restaurant was inspired by the historical figure, John Anthony, who was the first Chinese man to be naturalized as a British citizen in 1805. Exploring the fusion of architectural styles and materiality between east and west and colonial architecture blurred with eastern detailing, to create a British tea hall turned Chinese canteen.', image: 'https://www.re-thinkingthefuture.com/wp-content/uploads/2020/01/A465-20-BEST-INTERIOR-PROJECTS-JOHN-ANTHONY-IMAGE-1.jpg'
+p1 = Project.create! title: 'John Anthony', location:'China', description: 'John Anthony is a contemporary dim sum restaurant located in Hong Kong. The design of the restaurant was inspired by the historical figure, John Anthony, who was the first Chinese man to be naturalized as a British citizen in 1805. Exploring the fusion of architectural styles and materiality between east and west and colonial architecture blurred with eastern detailing, to create a British tea hall turned Chinese canteen.', project_url: 'http://linehousedesign.com/work/house-of-john-anthony', image: 'https://www.re-thinkingthefuture.com/wp-content/uploads/2020/01/A465-20-BEST-INTERIOR-PROJECTS-JOHN-ANTHONY-IMAGE-1.jpg', images: ['https://www.re-thinkingthefuture.com/wp-content/uploads/2020/01/A465-20-BEST-INTERIOR-PROJECTS-JOHN-ANTHONY-IMAGE-2.jpg','https://www.re-thinkingthefuture.com/wp-content/uploads/2020/01/A465-20-BEST-INTERIOR-PROJECTS-JOHN-ANTHONY-IMAGE-3.jpg','https://www.re-thinkingthefuture.com/wp-content/uploads/2020/01/A465-20-BEST-INTERIOR-PROJECTS-JOHN-ANTHONY-IMAGE-4.jpg','https://www.re-thinkingthefuture.com/wp-content/uploads/2020/01/A465-20-BEST-INTERIOR-PROJECTS-JOHN-ANTHONY-IMAGE-5.jpg']
 
 p2 = Project.create! title: 'Gusto', location:'USA', description: 'Shortlisted for a large workspace project, Gusto has transformed an industrial building that earlier served as a huge machine shop for submarines. It is a space that allows its users to experience both privacy and a communal way of working.
 Along the center, the full height space opening up to a metal trussed roof serves the purpose of a massive lounge for informal meetings and casual working.', image: 'https://www.re-thinkingthefuture.com/wp-content/uploads/2020/01/A465-20-BEST-INTERIOR-PROJECTS-GUSTO-IMAGE-1.jpg'
@@ -42,7 +42,7 @@ print "Creating Users...."
 
 User.destroy_all
 
-u1 = User.create! name:'LineHouse', email: 'linehouse@gmail.com', password: 'linehouse',studio:'LineHouse', location: 'Shanghai'
+u1 = User.create! name:'LineHouse', email: 'linehouse@gmail.com', password: 'linehouse',studio:'LineHouse',studio_url: 'http://linehousedesign.com/', location: 'Shanghai'
 
 u2 = User.create! name:'Gensler', email: 'gensler@gmail.com', password: 'gensler',studio:'Gensler', location: 'USA'
 

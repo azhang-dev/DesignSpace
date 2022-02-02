@@ -20,7 +20,11 @@
 </p>
 <p>
 <strong>Studio: </strong>
-<%= @project.user.studio %> 
+<a href="<%= @project.user.studio_url %>"><%= @project.user.studio %> </a>
+</p>
+<p>
+<a href="<%= @project.project_url %> "><strong>Project Link </strong></a>
+
 </p>
 
 <p>
@@ -31,6 +35,6 @@
 
 <% @project.images.each do |i| %>
 
-<%= cl_image_tag(i) %>
+<%= cl_image_tag(i, class: 'index_image')  %>
 
 <% end %>
