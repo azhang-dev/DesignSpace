@@ -1,6 +1,15 @@
 .web_logo{
     text-decoration: none;
 }
+.user_image{
+height:100px;
+width:100px;
+object-fit: cover;
+margin: 5px;
+border: 2px solid black;
+padding: 2px;
+border-radius: 50%
+}
 
 .index_image{
 height:200px;

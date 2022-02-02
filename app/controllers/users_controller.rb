@@ -14,28 +14,43 @@ class UsersController < ApplicationController
       render :new
     
     end
+    if params[:user][:image].present?
+      req = Cloudinary::Uploader.upload params[:user][:image]
+      @user.image = req["public_id"]
+   end
+   @user.save
   end
 
   def index
   end
 
   def show
-
     @user = User.find params[:id]
+
     
   end
 
   def edit
     @user = User.find params[:id]
-
+    redirect_to login_path  unless @current_user.id.present?
   end
 
   def update
+    @user = User.find params[:id]
+   
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload params[:file]
+      @user.image = req["public_id"]
+    end
+    @user.update_attributes(user_params)
+    @user.save
+    
     if @user.update user_params
-      redirect_to profile_path(@user)
+      redirect_to user_path(@user)
     else
       render :edit  # show the edit form again, pre-filled (and also with @user.errors)
     end
+    
   end
 
   def destroy
@@ -46,6 +61,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name,:email,:password,:studio,:location)
+    params.require(:user).permit(:name,:email,:password,:studio,:studio_url,:location)
   end
 end

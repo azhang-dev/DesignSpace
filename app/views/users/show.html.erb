@@ -1,5 +1,10 @@
 
 <h2>Account:<%= @current_user.name %></h2>
+
+
+<%= cl_image_tag(@user.image, class: 'user_image') %>
+
+
 <br>
 <%= link_to 'Edit Account', edit_user_path(@current_user.id) %>
 <%= link_to 'Delete Account', destroy_user_path(@current_user.id) %>

@@ -42,7 +42,7 @@ print "Creating Users...."
 
 User.destroy_all
 
-u1 = User.create! name:'LineHouse', email: 'linehouse@gmail.com', password: 'linehouse',studio:'LineHouse',studio_url: 'http://linehousedesign.com/', location: 'Shanghai'
+u1 = User.create! name:'LineHouse', email: 'linehouse@gmail.com', password: 'linehouse',studio:'LineHouse',studio_url: 'http://linehousedesign.com/', location: 'Shanghai', image: 'https://www.re-thinkingthefuture.com/wp-content/uploads/2020/01/A465-20-BEST-INTERIOR-PROJECTS-JOHN-ANTHONY-IMAGE-1.jpg'
 
 u2 = User.create! name:'Gensler', email: 'gensler@gmail.com', password: 'gensler',studio:'Gensler', location: 'USA'
 

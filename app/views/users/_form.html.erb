@@ -18,6 +18,9 @@
     <%= f.label :location %>
     <%= f.country_select :location %> 
     <br>
+    <%= f.label :user_image %>
+    <%= f.file_field :user_image, :multiple => false %> 
+    <br>
 
 
     <%= f.submit %>
