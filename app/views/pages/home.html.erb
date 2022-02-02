@@ -1,11 +1,15 @@
-<h2>Welcome</h2>
-
 
 <ul>
     <% @projects.each do |project| %>
+
+
     <li>
-    <%= link_to cl_image_tag(project.image, class:'index_image'), project_path(project.id) %> 
+        <section>
+            <%= link_to cl_image_tag(project.image, class:'index_image'), project_path(project.id) %> 
+            <br>
+            <%= project.title %>
+        </section>
     </li>
 
     <% end %>
-</ul>
+</ul>ß

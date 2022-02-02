@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get '/projects/new' => 'projects#new',as: 'new_project'
   post '/projects/'    => 'projects#create'
   get '/projects'     => 'projects#index'
+  get '/projects/search' => 'projects#search', as: 'search_project'
+  get '/projects/search/results' => 'movie#results'
   get '/projects/:id' => 'projects#show',as: 'project'
   get '/projects/:id/edit' => 'projects#edit',as: 'edit_project'
   patch '/projects/'    => 'projects#update'

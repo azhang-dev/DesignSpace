@@ -18,34 +18,30 @@
 
        <% if @current_user.present? %>
          Welcome, <%= @current_user.name %>
-         <%= link_to 'Libraries', libraries_path %>
-         |
-         <%= link_to 'New Library', new_library_path %>
-         |
-         <%= link_to 'Projects Index', projects_path %>
-         |
-         <%= link_to 'New Project', new_project_path %>
-         |
-         <%= link_to 'Account', user_path(@current_user.id) %>
-         |
-         <%= link_to 'Logout', login_path, method: 'delete' %>
+         <%= link_to 'Libraries', libraries_path , class: 'nav_links' %>
+         
+         <%= link_to 'New Library', new_library_path , class: 'nav_links' %>
+         
+         <%= link_to 'Projects Index', projects_path , class: 'nav_links' %>
+         
+         <%= link_to 'New Project', new_project_path , class: 'nav_links' %>
+         
+         <%= link_to 'Account', user_path(@current_user.id) , class: 'nav_links' %>
+         
+         <%= link_to 'Logout', login_path, method: 'delete', class: 'nav_links'  %>
        <% else %>
-         <%= link_to 'Login', login_path %>
-         |
-         <%= link_to 'Sign Up', new_user_path %>
+         <%= link_to 'Login', login_path , class: 'nav_links' %>
+         
+         <%= link_to 'Sign Up', new_user_path , class: 'nav_links' %>
        <% end %>
 
        
-
-
-
-      <hr>
     </nav>
 
     <%= yield %>
 
     <footer>
-      <hr>
+      
       &copy; DesignSPACE 2022
     </footer>
 
