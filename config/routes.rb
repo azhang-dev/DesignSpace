@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy' # logout link goes here, perform logout, redirect
 
   get '/signup'             => 'users#new',as: 'new_user'
-  post '/signup'             => 'users#create'
+  post '/signup'            => 'users#create'
+  get '/profile'            => 'users#index', as: 'index_user'
   get '/profile/:id'        => 'users#show', as: 'user'
   get '/profile/:id/edit'   => 'users#edit', as: 'edit_user'
-  get '/profile/'           => 'users#update'
+  patch '/profile/:id'      => 'users#update'
   get '/profile/:id/delete' => 'users#destroy',as: 'destroy_user'
   resources :users 
 
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
   get '/projects/:id/edit' => 'projects#edit',as: 'edit_project'
   patch '/projects/'    => 'projects#update'
   get '/projects/:id/delete' => 'projects#destroy',as: 'destroy_project'
-
+  resources :projects # error without resources for "project#update"
 
   resources :libraries
   post '/libraries/add/:project_id' => 'libraries#add_project', as: 'library_add_project'

@@ -1,3 +1,28 @@
-<h1>Welcome, <%= @current_user.name %></h1>
+
+<h2>Account:<%= @current_user.name %></h2>
+<br>
+<%= link_to 'Edit Account', edit_user_path(@current_user.id) %>
+<%= link_to 'Delete Account', destroy_user_path(@current_user.id) %>
+
+<p>
+<strong>Email: </strong>
+<%= @user.email %> 
+</p>
+<p>
+<strong>Password: </strong>
+<%= @user.password %> 
+</p>
+<p>
+<strong>Studio: </strong>
+<%= @user.studio %> 
+</p>
+<p>
+<strong>Studio Website: </strong>
+<a href="<%= @user.studio_url %> "><%= @user.studio_url %> </a>
+</p>
+<p>
+<strong>Location: </strong>
+<%= @user.location %> 
+</p>
 
 

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :check_if_logged_in, except: [:new,:create]
+  before_action :check_if_logged_in, except: [:new,:create,:destroy]
   def new
     @user = User.new
   end
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
 
   def show
+
     @user = User.find params[:id]
     
   end
