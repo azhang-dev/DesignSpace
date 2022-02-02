@@ -1,10 +1,10 @@
-<%= form_with model: @projects, local: true do |f| %>
+<%= form_with model: @project, local: true do |f| %>
 
     <%= f.label :title %>
     <%= f.text_field :title %>
     <br>
     <%= f.label :location %>
-    <%= f.text_field :location %>
+    <%= f.country_select :location %>
     <br>
     <%= f.label :description %>
     <%= f.text_field :description %> 

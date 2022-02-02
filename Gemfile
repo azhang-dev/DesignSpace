@@ -50,3 +50,7 @@ group :test do
 end
 
 gem 'pry-rails'
+
+gem 'country_select'
+
+gem 'cloudinary'

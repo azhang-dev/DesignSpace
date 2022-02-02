@@ -1,0 +1,25 @@
+<%= form_with model: @users, local: true do |f| %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <br>
+    <%= f.label :password, 'Password'%>
+    <%= f.text_field :password %>
+    <br>
+    <%= f.label :password, 'Re-Enter Password'%>
+    <%= f.text_field :password %>
+    <br>
+    <%= f.label :name %>
+    <%= f.text_field :name %> 
+    <br>
+    <%= f.label :studio %>
+    <%= f.text_field :studio %> 
+    <br>
+    <%= f.label :location %>
+    <%= f.text_field :location %> 
+    <br>
+
+
+    <%= f.submit %>
+
+<% end %>

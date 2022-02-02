@@ -71,6 +71,8 @@ class ProjectsController < ApplicationController
 
 
   def destroy
+    Project.destroy params[:id]
+    redirect_to projects_path
   end
 
 

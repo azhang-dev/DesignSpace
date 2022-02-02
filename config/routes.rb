@@ -1,26 +1,25 @@
 Rails.application.routes.draw do
+ 
   root to: 'pages#home'
   
-  get '/signup' => 'pages#new'
-
+  get '/signup' => 'users#new',as: 'new_user'
+  
 
   get '/login'    => 'session#new'     # show the login form
   post '/login'   => 'session#create'  # form submits to here, performs login, redirect
   delete '/login' => 'session#destroy' # logout link goes here, perform logout, redirect
   
   get '/projects/new' => 'projects#new',as: 'new_project'
+  post '/projects/'    => 'projects#create'
   get '/projects'     => 'projects#index'
   get '/projects/:id' => 'projects#show',as: 'project'
   get '/projects/:id' => 'projects#edit',as: 'edit_project'
   get '/projects/'    => 'projects#update'
   get '/projects/:id/delete' => 'projects#destroy',as: 'destroy_project'
 
-  # get '/:user/projects/new' => 'projects#index', as: 'new_project'
-  # get '/:user/projects' => 'projects#index'
-  # get '/:user/projects/:id' => 'projects#show', as: 'project'
 
   resources :libraries
-
+  post '/libraries/add/:project_id' => 'libraries#add_project', as: 'library_add_project'
   
 
   resources :mixtapes

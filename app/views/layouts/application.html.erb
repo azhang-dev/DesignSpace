@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
   </head>
 
   <body>
@@ -29,7 +30,7 @@
        <% else %>
          <%= link_to 'Login', login_path %>
          |
-         <%= link_to 'Sign Up', '/does-not-exist-yet' %>
+         <%= link_to 'Sign Up', new_user_path %>
        <% end %>
 
        

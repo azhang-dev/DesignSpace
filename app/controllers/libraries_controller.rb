@@ -2,6 +2,18 @@ class LibrariesController < ApplicationController
 
   before_action :check_if_logged_in, except: [:index, :show]
 
+  def add_project
+    @project = Project.find params[:project_id]
+    @library = Library.find params[:library_id]
+
+    #avoid duplicates
+    unless @library.projects.include? @project
+      @library.projects << @project 
+    end
+
+    redirect_to  library_path(@library)
+  end
+
   def new
     @library = Library.new
   end
@@ -88,5 +100,6 @@ class LibrariesController < ApplicationController
   def library_params
     params.require(:library).permit(:name, :image)
   end
+
 
 end
