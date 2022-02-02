@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
   def show
     # fetch_user  # sets @current_user
     @project = Project.find params[:id]
-  
+   
   end
 
   def edit
@@ -79,7 +79,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :image)
+    params.require(:project).permit(:title,:location,:description,:image_url)
   end
   
 

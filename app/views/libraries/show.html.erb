@@ -1,5 +1,5 @@
 <h1>Library: <%= @library.name %> </h1>
-
+<%= cl_image_tag @library.image %> 
 <ul>
   <% @library.projects.each do |l| %>
     <li>
@@ -8,3 +8,5 @@
     </li>
   <% end %>
 </ul> 
+
+ 

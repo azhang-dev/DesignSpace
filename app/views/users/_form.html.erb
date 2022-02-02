@@ -1,13 +1,13 @@
-<%= form_with model: @users, local: true do |f| %>
+<%= form_for @user do |f| %>
 
     <%= f.label :email %>
     <%= f.text_field :email %>
     <br>
-    <%= f.label :password, 'Password'%>
-    <%= f.text_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: 'Password' %>
     <br>
-    <%= f.label :password, 'Re-Enter Password'%>
-    <%= f.text_field :password %>
+    <%= f.label :password, 'Confirm Password'%>
+    <%= f.password_field :password_confirmation, placeholder: 'Confirm Password' %>
     <br>
     <%= f.label :name %>
     <%= f.text_field :name %> 
@@ -16,7 +16,7 @@
     <%= f.text_field :studio %> 
     <br>
     <%= f.label :location %>
-    <%= f.text_field :location %> 
+    <%= f.country_select :location %> 
     <br>
 
 

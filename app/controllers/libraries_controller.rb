@@ -31,7 +31,7 @@ class LibrariesController < ApplicationController
       #forward the uploaded image on the Cloudinary (using the gem):
       response = Cloudinary::Uploader.upload params[:library][:image]
       #p response # so we can see what the response look like
-      @library.image = response['public_id'] 
+      @library.image = response['public_id'] # add to the item we are saving
     end # upload check
 
 

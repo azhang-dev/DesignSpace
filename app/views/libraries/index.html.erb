@@ -2,7 +2,7 @@
 
 
 <ul>
-  <% @libraries.each do |mix| %>
+  <% @current_user.libraries.each do |mix| %>
     <li>
       <%= link_to mix.name, library_path(mix) %>
       <% if @current_user.present? && mix.user_id == @current_user.id %>
