@@ -4,9 +4,6 @@
     <% @current_user.projects.each do |project| %>
     <li>
     <%= link_to cl_image_tag(project.image, class: 'index_image'), project_path(project.id) %> 
-
-
     </li>
-
     <% end %>
-</ul>
+</ul>           

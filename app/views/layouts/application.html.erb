@@ -25,10 +25,11 @@
          <%= link_to 'Projects Index', projects_path , class: 'nav_links' %>
          
          <%= link_to 'New Project', new_project_path , class: 'nav_links' %>
-         
-         <%= link_to 'Account', user_path(@current_user.id) , class: 'nav_links' %>
-         
-         <%= link_to 'Logout', login_path, method: 'delete', class: 'nav_links'  %>
+         <section class= 'right_end_buttons'>
+          <%= link_to 'Logout', login_path, method: 'delete', class: 'nav_links'  %>
+         </section>
+          <%= link_to cl_image_tag(@current_user.image, id: 'user_acc_img'), user_path(@current_user.id) %>
+
        <% else %>
          <%= link_to 'Login', login_path , class: 'nav_links' %>
          
