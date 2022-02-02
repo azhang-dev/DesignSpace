@@ -11,7 +11,14 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new project_params
     @project.user_id = @current_user.id
-    @project.save
+
+    if params[:project][:images].present?
+      params[:project][:images].each do |image|
+        req = Cloudinary::Uploader.upload(image)
+        @project.images << req["public_id"]
+      end
+    end
+   @project.save
 
     # Did the above save work, or did it fail due to a validation error?
     if @project.persisted?
@@ -54,8 +61,16 @@ class ProjectsController < ApplicationController
       redirect_to login_path  # THIS IS NOT ENOUGH - rest of action still tries to run
       return  # this prevents the update below from happening
     end
-
     # redirect_to login_path and return unless @project.user_id == @current_user.id
+    
+    if params[:project][:images].present?
+      params[:project][:images].each do |image|
+        req = Cloudinary::Uploader.upload(image)
+        @project.images << req["public_id"]
+      end
+    end
+    @project.update_attributes(project_params)
+    @project.save
 
     # Check if the update worked - it might fail due to the same validation errors
     # as the create

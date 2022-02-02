@@ -29,7 +29,8 @@
 </p>
 
 
+<% @project.images.each do |i| %>
 
+<%= cl_image_tag(i) %>
 
-<%= image_tag @project.image_url, alt: @project.title, class: "project_image" %>
-
+<% end %>
