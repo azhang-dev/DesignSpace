@@ -22,9 +22,19 @@ class LibrariesController < ApplicationController
     # library = Library.create library_params
     # library.user_id = @current_user.id  # OR: library.user = @current_user
     # library.save  # NOT saved to the DB until we do this!
+    #raise "hell"
 
     @library = Library.new library_params
     @library.user_id = @current_user.id
+
+    if params[:library][:image].present?
+      #forward the uploaded image on the Cloudinary (using the gem):
+      response = Cloudinary::Uploader.upload params[:library][:image]
+      #p response # so we can see what the response look like
+      @library.image = response['public_id'] 
+    end # upload check
+
+
     @library.save
 
     # Did the above save work, or did it fail due to a validation error?
