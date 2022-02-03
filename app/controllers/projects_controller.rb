@@ -72,7 +72,7 @@ class ProjectsController < ApplicationController
       end
     end
      ##Cloudinary Single Images
-    if params[:project][:image].present?
+    if params[:project][:image].present? 
       req = Cloudinary::Uploader.upload params[:project][:image]
       @project.image = req["public_id"]
    end
