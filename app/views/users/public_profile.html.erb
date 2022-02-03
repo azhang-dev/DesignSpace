@@ -5,13 +5,17 @@
    
     <p>
     <strong>Studio: </strong>
-   
+    <%= @user.studio %>
     </p>
 
 
     <p>
     <strong>Studio Location: </strong>
-
+    <%= @user.location %>
+    </p>
+    <p>
+    <strong>Website: </strong>
+    <%= @user.studio_url %>
     </p>
 
     <p>
@@ -22,10 +26,7 @@
 
 
 <div class = "user_profile_projects" >
-    <p>
-    <strong>Recent Projects: </strong>
-    </p>
-
+    <h3><strong>Recent Projects: </strong></h3>
     <ul>
         <% @user.projects.each do |project| %>
             <li>

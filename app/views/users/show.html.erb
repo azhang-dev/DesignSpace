@@ -1,13 +1,10 @@
 
-<h2>Account:<%= @current_user.name %></h2>
-
-
-<%= cl_image_tag(@current_user.image, class: 'user_image') %>
-
-
-<br>
+<div class="show_page_info">
+<h2><%= @current_user.name %></h2>
 <%= link_to 'Edit Account', edit_user_path %>
 <%= link_to 'Delete Account', destroy_user_path(@current_user.id) %>
+<br>
+<%= cl_image_tag(@current_user.image, class: 'user_image') %>
 
 <p>
 <strong>Email: </strong>
@@ -29,5 +26,5 @@
 <strong>Location: </strong>
 <%= @current_user.location %> 
 </p>
-
+</div>
 

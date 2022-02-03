@@ -34,11 +34,12 @@ nav{
     text-decoration: none;
     
 }
-.right_end_buttons{
+.nav_buttons{
     padding: 2px 5px 2px 5px;
     float: right;
     margin: 0px 0px 0px 5px;
-    margin-right: 100px; 
+    margin-right: 70px; 
+    
 }
 .log_sign_buttons{
     float: right;
@@ -48,7 +49,7 @@ nav{
     float:right;
     position:absolute;
     bottom:1px;
-    right: 40px;
+    right: 20px;
 
     height:50px;
     width:50px;
@@ -61,15 +62,16 @@ nav{
 }
 
 body{
+    background-color: white;
     position: static;
-    padding:100px 20px 100px 20px;
+    padding:120px 20px 100px 20px;
     font-size: 12px;
-    text-align: justify;
+    text-align:center;
     
 }
-
-
-
+.form_div{
+    margin:0px 150px 0px 150px;
+}
 footer{
     background-color: #f1b73a;
     color:white;
@@ -77,20 +79,21 @@ footer{
     left: 0;
     bottom: 0;
     width: 100%;
-    line-height: 80px;
+    line-height: 30px;
     text-align: center;
 }
 .web_logo{
     text-decoration: none;
 }
 .user_image{
-height:100px;
-width:100px;
-object-fit: cover;
-margin: 5px;
-border: 2px solid black;
-padding: 2px;
-border-radius: 50%
+    height:100px;
+    width:100px;
+    object-fit: cover;
+    margin: 5px;
+    border: 2px solid #f1b73a;
+    padding: 1px;
+    background-color: white;
+    border-radius: 10%
 }
 
 .index_image{
@@ -113,9 +116,8 @@ ul{
     list-style-type: none;
     padding-inline-start: 20px;
     display: grid;
-    grid-template-columns: repeat(5, 250px);
-    text-align: center;
-    
+    grid-template-columns: repeat(3, 250px);
+    text-align: center; 
 }
 
 li{
@@ -138,3 +140,26 @@ li{
  float:right;
 
 }
+
+.show_page_info{
+    background-color:  #4b33b9 ;
+    color:white;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    display: inline-block;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+p{
+    text-align: justify;
+}
+
+.user_profile_projects{
+
+    width: 600px;
+}
+

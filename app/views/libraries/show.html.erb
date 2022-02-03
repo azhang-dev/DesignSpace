@@ -1,10 +1,10 @@
-<h1>Library: <%= @library.name %> </h1>
+<h2><%= @library.name %> </h2>
 <%= cl_image_tag @library.image %> 
 <ul>
   <% @library.projects.each do |l| %>
     <li>
-      <%= link_to l.title, project_path(l.id) %>
-      |
+      <%= link_to cl_image_tag(l.image, class: 'index_image'), project_path(l.id) %>
+      
     </li>
   <% end %>
 </ul> 

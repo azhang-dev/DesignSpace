@@ -1,3 +1,4 @@
+<div class="form_div">
 <% if @library.errors.any? %>
   <strong>Please correct the following errors:</strong>
   <ul>
@@ -9,9 +10,9 @@
   </ul>
 <% end %><%# if %>
 <%= form_with model: @library, local: true, html: { multipart: true } do |f| %>
-  <%= f.label :name %>
+  <%= f.label :name, :class => "form-label" %>
   <br>
-  <%= f.text_field :name %>
+  <%= f.text_field :name,:class => "form-control"  %>
   <br>
   <%= f.label :image %>
   <br>
@@ -20,3 +21,4 @@
   <br>
   <%= f.submit %>
 <% end %>
+</div>
