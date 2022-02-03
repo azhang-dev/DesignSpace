@@ -116,7 +116,7 @@ ul{
     list-style-type: none;
     padding-inline-start: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 250px);
+    grid-template-columns: repeat(5, 250px);
     text-align: center; 
 }
 
