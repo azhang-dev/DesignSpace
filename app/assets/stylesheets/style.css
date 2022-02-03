@@ -11,6 +11,13 @@ nav{
     
 }
 
+.nav_bar{
+    display:flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+
 #logo{
     height:70px;
     width: auto;
@@ -19,21 +26,23 @@ nav{
 }
 .nav_links{
 
-    background-color: aqua;
+    background-color: #4b33b9;
+    color:white;
     padding: 2px 5px 2px 5px;
     margin: 0px 0px 0px 5px;
     border-radius: 5px;
     text-decoration: none;
-    line-height: 1px;    
+    
 }
-
 .right_end_buttons{
+    padding: 2px 5px 2px 5px;
     float: right;
-    margin-right: 100px;
+    margin: 0px 0px 0px 5px;
+    margin-right: 100px; 
 }
 .log_sign_buttons{
     float: right;
-    margin-right: 50px;
+    margin-right: 20px;
 }
 #user_acc_img{
     float:right;
@@ -41,14 +50,14 @@ nav{
     bottom:1px;
     right: 40px;
 
-    height:40px;
-    width:40px;
+    height:50px;
+    width:50px;
     object-fit: cover;
     margin: 5px;
-    border: 2px solid black;
-    padding: 3px;
+    border: 2px solid #f1b73a;
+    padding: 1px;
     background-color: white;
-    border-radius: 50%
+    border-radius: 10%
 }
 
 body{
@@ -62,12 +71,13 @@ body{
 
 
 footer{
-    background-color: #E27D60;
+    background-color: #f1b73a;
+    color:white;
     position:fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    line-height: 100px;
+    line-height: 80px;
     text-align: center;
 }
 .web_logo{
@@ -101,14 +111,15 @@ margin-top: 50px;
 
 ul{
     list-style-type: none;
-  
     padding-inline-start: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 250px);
+    text-align: center;
     
 }
 
 li{
-    display: inline-block;
-   
+    display: inline-block;  
 }
 
 .project_image{
