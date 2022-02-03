@@ -25,36 +25,34 @@ class UsersController < ApplicationController
    
   end
 
-  def public_profile
-    @user = User.find params[:id]
-  end
-
   def show
   
 
   end
 
   def edit
-    @user = User.find params[:id]
     redirect_to login_path  unless @current_user.id.present?
   end
 
   def update
-    @user = User.find params[:id]
+   
     #raise 'hell'
     if params[:user][:image].present?
       req = Cloudinary::Uploader.upload params[:user][:image]
-      @user.image = req["public_id"]
+      @current_user.image = req["public_id"]
     end
-    #raise 'hell'
     
-    if @user.update user_params
-      redirect_to user_path(@user)
+    if @current_user.update user_params
+      redirect_to user_path(@current_user)
     else
       render :edit  # show the edit form again, pre-filled (and also with @user.errors)
     end
    
   end
+
+  def public_profile
+    @user = User.find params[:id]
+    end
 
   def destroy
     User.destroy params[:id]

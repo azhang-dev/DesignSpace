@@ -8,11 +8,11 @@ Rails.application.routes.draw do
 
   get '/signup'             => 'users#new',as: 'new_user'
   post '/signup'            => 'users#create'
-  get '/profile/:id'            => 'users#public_profile', as: 'public_profile'
   get '/profile'        => 'users#show', as: 'user'
-  get '/profile/:id/edit'   => 'users#edit', as: 'edit_user'
-  patch '/profile/:id'      => 'users#update'
+  get '/profile/edit'   => 'users#edit', as: 'edit_user'
+  patch '/profile/'      => 'users#update'
   get '/profile/:id/delete' => 'users#destroy',as: 'destroy_user'
+  get '/profile/:id'            => 'users#public_profile', as: 'public_profile'
   resources :users 
 
 
