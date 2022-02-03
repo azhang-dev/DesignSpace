@@ -1,6 +1,6 @@
+  
 <h2><%= @project.title %></h2>
 <% if @current_user.present? && @project.user_id == @current_user.id %>
-
     <%= link_to 'Edit Project', edit_project_path(@project.id) %>
     |
     <%= link_to 'Delete Project', destroy_project_path(@project.id) %>
@@ -10,7 +10,6 @@
     <%= form_with url: library_add_project_path(@project.id), local: true do |f| %>
         <%= f.collection_select :library_id, @current_user.libraries, :id, :name %> 
         <%= f.submit "Add" %>
-
     <% end %>
 <% end %> 
 <br>
@@ -20,11 +19,11 @@
 </p>
 <p>
 <strong>Studio: </strong>
-<%= link_to  @project.user.studio , index_user_path(@project.user.id) %>
+<%= link_to  @project.user.studio , public_profile_path(@project.user.id) %>
 
 </p>
 <p>
-<a href="<%= @project.project_url %> "><strong>Project Link </strong></a>
+<a href="<%= @project.project_url %> " target = '_blank' ><strong>Project Link </strong></a>
 
 </p>
 
@@ -35,7 +34,5 @@
 
 
 <% @project.images.each do |i| %>
-
 <%= cl_image_tag(i, class: 'index_image')  %>
-
 <% end %>

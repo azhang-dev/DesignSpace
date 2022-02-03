@@ -22,14 +22,15 @@ class UsersController < ApplicationController
   end
 
   def index
-    #raise 'hell'
-    @user = User.all
    
-    
+  end
+
+  def public_profile
+    @user = User.find params[:id]
   end
 
   def show
-    @user = User.find params[:id]
+  
 
   end
 

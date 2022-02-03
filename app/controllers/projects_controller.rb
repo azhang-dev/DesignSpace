@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   
   #############ONLY USER'S PROJECTS##############
 
-  before_action :check_if_logged_in, except: [:show]
+  before_action :check_if_logged_in, except: [:show, :index]
 
   def new
     @project = Project.new
@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
   end # create()
 
   def index
-    
+    @project = Project.all
   end
 
   def show

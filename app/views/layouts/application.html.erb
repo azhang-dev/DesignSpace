@@ -28,7 +28,7 @@
          <section class= 'right_end_buttons'>
           <%= link_to 'Logout', login_path, method: 'delete', class: 'nav_links'  %>
          </section>
-          <%= link_to cl_image_tag(@current_user.image, id: 'user_acc_img'), user_path(@current_user.id) %>
+          <%= link_to cl_image_tag(@current_user.image, id: 'user_acc_img'), user_path %>
 
        <% else %>
          <%= link_to 'Login', login_path , class: 'nav_links' %>
