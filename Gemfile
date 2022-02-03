@@ -54,3 +54,6 @@ gem 'pry-rails'
 gem 'country_select'
 
 gem 'cloudinary'
+
+gem 'bootstrap'
+gem 'jquery-rails'
