@@ -7,8 +7,7 @@ nav{
     width: 100%;
    
     padding:10px;
-    text-decoration: none;
-    
+    text-decoration: none; 
 }
 
 .nav_bar{
@@ -32,8 +31,14 @@ nav{
     margin: 0px 0px 0px 5px;
     border-radius: 5px;
     text-decoration: none;
-    
+  
 }
+
+.nav_links:hover{
+    background-color: #f1b73a ;
+}
+
+
 .nav_buttons{
     padding: 2px 5px 2px 5px;
     float: right;
@@ -97,16 +102,34 @@ footer{
 }
 
 .index_image{
-height:200px;
-width:200px;
-object-fit: cover;
-margin: 10px;
-border-radius:5px;
-margin-top: 50px;
-}
-#index_title{
+    height:200px;
     width:200px;
-    margin:-5px 0px 0px 10px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius:5px;
+    margin-top: 50px;
+}
+.show_image{
+    height:200px;
+    width:200px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius:5px;
+    margin-top: 50px;
+}
+
+.profileProjectsImg{
+    list-style-type: none;
+    padding-inline-start: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    text-align: center; 
+}
+
+
+#index_title{
+    width:180px;
+    margin:-5px 0px 0px 30px;
     position:absolute;
     overflow-wrap: break-word;
     z-index: -100;
@@ -137,13 +160,22 @@ li{
 }
 
 .user_profile_projects{
- float:right;
+    float:right;
 
 }
 
+.public_profile_img{
+    height:80px;
+    width:80px;
+    object-fit: cover;
+    margin: 5px;
+    border: 2px solid #f1b73a;
+    padding: 1px;
+    background-color: white;
+    border-radius: 10%
+}
+
 .show_page_info{
-    background-color:  #4b33b9 ;
-    color:white;
     border: 2px solid black;
     border-radius: 10px;
     width: 400px;

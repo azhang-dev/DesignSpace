@@ -1,8 +1,11 @@
-<section class = "user_profile_details">
+<div class = "user_profile_details">
     <h3>Profile</h3>
     
     <h5><%= @user.name %></h5>
    
+    
+    <%= cl_image_tag(@user.image, class:'public_profile_img') %>
+
     <p>
     <strong>Studio: </strong>
     <%= @user.studio %>
@@ -15,19 +18,19 @@
     </p>
     <p>
     <strong>Website: </strong>
-    <%= @user.studio_url %>
+        <a href="<%= @user.studio_url %>"><%= @user.studio_url %></a>
     </p>
-
+       
     <p>
     <strong>Followers: </strong>
-
     </p>
-</section>
+</div>
 
 
+<h3><strong>Recent Projects: </strong></h3>
 <div class = "user_profile_projects" >
-    <h3><strong>Recent Projects: </strong></h3>
-    <ul>
+
+    <ul class="profileProjectsImg">
         <% @user.projects.each do |project| %>
             <li>
                 <%= link_to cl_image_tag(project.image, class: 'index_image'), project_path(project.id) %> 

@@ -6,7 +6,7 @@
     <%= link_to 'Delete Project', destroy_project_path(@project.id) %>
 <% elsif @current_user.present? %>
     
- <%#DROP DOWN LIST TO USERS LIBRARIES%>
+ <%#DROP DOWN LIST TO USERS LIBRARIES- using the country gem%>
     <%= form_with url: library_add_project_path(@project.id), local: true do |f| %>
         <%= f.collection_select :library_id, @current_user.libraries, :id, :name %> 
         <%= f.submit "Add" %>
@@ -33,6 +33,8 @@
 </p>
 
 
+<div class="projectImageContainer">
 <% @project.images.each do |i| %>
-<%= cl_image_tag(i, class: 'index_image')  %>
+<%= cl_image_tag(i, class: 'show_image')%>
 <% end %>
+</div>
