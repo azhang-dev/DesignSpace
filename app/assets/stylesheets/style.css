@@ -42,14 +42,10 @@ body{
     position: static;
     padding:100px 20px 100px 20px;
     font-size: 12px;
+    text-align: justify;
 }
 
-#index_title{
-    margin:-8px 0px 0px 10px;
-    position:absolute;
-    overflow-wrap: break-word;
-    z-index: -100;
-}
+
 
 footer{
     background-color: #E27D60;
@@ -77,9 +73,16 @@ border-radius: 50%
 height:200px;
 width:200px;
 object-fit: cover;
-margin: 5px;
+margin: 10px;
 border-radius:5px;
-margin-top: 20px;
+margin-top: 50px;
+}
+#index_title{
+    width:200px;
+    margin:-5px 0px 0px 10px;
+    position:absolute;
+    overflow-wrap: break-word;
+    z-index: -100;
 }
 
 ul{
@@ -95,4 +98,17 @@ li{
 
 .project_image{
     max-height: 100vh;
+}
+
+.user_profile_details{
+    position:fixed;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+  
+}
+
+.user_profile_projects{
+ float:right;
+
 }

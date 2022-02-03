@@ -1,2 +1,37 @@
-<h2>Profile<%= @current_user.name %></h2>
-<p>Find me in app/views/users/index.html.erb</p>
+<section class = "user_profile_details">
+    <h3>Profile</h3>
+
+    <h5><%= @current_user.name %></h5>
+
+    <p>
+    <strong>Studio: </strong>
+    <a href="<%= @current_user.studio_url %>"><%= @current_user.studio %> </a>
+    </p>
+
+
+    <p>
+    <strong>Studio Location: </strong>
+
+    </p>
+
+    <p>
+    <strong>Followers: </strong>
+
+    </p>
+</section>
+
+
+<div class = "user_profile_projects" >
+    <p>
+    <strong>Recent Projects: </strong>
+    </p>
+
+    <ul>
+        <% @current_user.projects.each do |project| %>
+            <li>
+                <%= link_to cl_image_tag(project.image, class: 'index_image'), project_path(project.id) %> 
+            </li>
+        <% end %>
+    </ul>  
+</div>
+

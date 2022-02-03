@@ -20,7 +20,7 @@
 </p>
 <p>
 <strong>Studio: </strong>
-<a href="<%= @project.user.studio_url %>"><%= @project.user.studio %> </a>
+<%= link_to  @project.user.studio , index_user_path(@project.user.id) %>
 
 </p>
 <p>
