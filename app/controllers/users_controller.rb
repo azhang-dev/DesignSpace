@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :check_if_logged_in, except: [:new,:create,:destroy]
+  before_action :check_if_logged_in, except: [:new,:create,:index, :destroy]
   def new
     @user = User.new
   end
@@ -22,12 +22,15 @@ class UsersController < ApplicationController
   end
 
   def index
+    #raise 'hell'
+    @user = User.all
+   
+    
   end
 
   def show
     @user = User.find params[:id]
 
-    
   end
 
   def edit
@@ -49,7 +52,7 @@ class UsersController < ApplicationController
     else
       render :edit  # show the edit form again, pre-filled (and also with @user.errors)
     end
-    
+   
   end
 
   def destroy

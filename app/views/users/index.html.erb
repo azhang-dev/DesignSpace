@@ -1,11 +1,11 @@
 <section class = "user_profile_details">
     <h3>Profile</h3>
-
-    <h5><%= @current_user.name %></h5>
-
+    
+    <h5><%= @user.name %></h5>
+   
     <p>
     <strong>Studio: </strong>
-    <a href="<%= @current_user.studio_url %>"><%= @current_user.studio %> </a>
+   
     </p>
 
 
@@ -27,7 +27,7 @@
     </p>
 
     <ul>
-        <% @current_user.projects.each do |project| %>
+        <% @user.each do |project| %>
             <li>
                 <%= link_to cl_image_tag(project.image, class: 'index_image'), project_path(project.id) %> 
             </li>

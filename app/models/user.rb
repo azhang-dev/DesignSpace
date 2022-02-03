@@ -11,5 +11,34 @@ class User < ApplicationRecord
 
   #has_and_belongs_to_many :library_projects, class_name: "Project"
   # You can't leave the email field blank! (How would you login?) ... it also has to be unqiue
-  validates :email, presence: true, uniqueness: true 
+  validates :email, presence: true, uniqueness: true
+
+  # users to be able to follow other users
+  has_many :following_relationships, class_name: 'Follow', foreign_key: 'follower_id'
+  has_many :followed_relationships, class_name: 'Follow', foreign_key: 'followed_id'
+  
+  has_many :following, through: :following_relationships, source: :followed
+  has_many :followers, through: :followed_relationships, source: :follower
+
+  def follow_safe( user_to_follow )
+
+    if self.following.include? user_to_follow
+      return false
+    else
+      self.following << user_to_follow
+      return true
+    end
+
+    def following_projects
+      Project.where user: self.following
+
+
+    end
+
+
+
+  end
+
+
+
 end
