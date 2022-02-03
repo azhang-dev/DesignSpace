@@ -5,8 +5,17 @@ nav{
     left: 0;
     top: 0;
     width: 100%;
+   
     padding:10px;
     text-decoration: none;
+    
+}
+
+#logo{
+    height:70px;
+    width: auto;
+    display: absolute;
+    vertical-align: center;
 }
 .nav_links{
 
@@ -21,6 +30,10 @@ nav{
 .right_end_buttons{
     float: right;
     margin-right: 100px;
+}
+.log_sign_buttons{
+    float: right;
+    margin-right: 50px;
 }
 #user_acc_img{
     float:right;
@@ -43,6 +56,7 @@ body{
     padding:100px 20px 100px 20px;
     font-size: 12px;
     text-align: justify;
+    
 }
 
 
@@ -87,8 +101,9 @@ margin-top: 50px;
 
 ul{
     list-style-type: none;
-    display: center;
+  
     padding-inline-start: 20px;
+    
 }
 
 li{

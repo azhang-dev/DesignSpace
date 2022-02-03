@@ -10,13 +10,13 @@
   </head>
 
   <body>
-
-    <nav>
-      <h1>
-      <%= link_to 'DesignSPACE', root_path, class:'web_logo' %>
-      </h1>
-
+    
+    <nav class = "nav_bar <%= 'user-container' if @current_user.present?  %>"  >
+      
+      <%= link_to image_tag('6.png', id: 'logo'), root_path %>
+      
        <% if @current_user.present? %>
+        
          Welcome, <%= @current_user.name %>
          <%= link_to 'Libraries', libraries_path , class: 'nav_links' %>
          
@@ -31,9 +31,11 @@
           <%= link_to cl_image_tag(@current_user.image, id: 'user_acc_img'), user_path %>
 
        <% else %>
-         <%= link_to 'Login', login_path , class: 'nav_links' %>
+          <section class= 'log_sign_buttons'>
+            <%= link_to 'Login', login_path , class: 'nav_links' %>
          
-         <%= link_to 'Sign Up', new_user_path , class: 'nav_links' %>
+            <%= link_to 'Sign Up', new_user_path , class: 'nav_links' %>
+          </section>
        <% end %>
 
        
