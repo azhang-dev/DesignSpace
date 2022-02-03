@@ -12,22 +12,19 @@ class UsersController < ApplicationController
     else
       p @user.errors.full_messages
       render :new
-    
     end
+
     if params[:user][:image].present?
       req = Cloudinary::Uploader.upload params[:user][:image]
       @user.image = req["public_id"]
-   end
+    end
    @user.save
   end
 
   def index
-   
   end
 
   def show
-  
-
   end
 
   def edit
@@ -35,8 +32,6 @@ class UsersController < ApplicationController
   end
 
   def update
-   
-    #raise 'hell'
     if params[:user][:image].present?
       req = Cloudinary::Uploader.upload params[:user][:image]
       @current_user.image = req["public_id"]
@@ -50,9 +45,10 @@ class UsersController < ApplicationController
    
   end
 
+  ### Public profile of the user
   def public_profile
     @user = User.find params[:id]
-    end
+  end
 
   def destroy
     User.destroy params[:id]

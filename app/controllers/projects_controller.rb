@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   
-  #############ONLY USER'S PROJECTS##############
-
+  
   before_action :check_if_logged_in, except: [:show, :index]
 
   def new
@@ -49,7 +48,6 @@ class ProjectsController < ApplicationController
     @project = Project.find params[:id]
 
     # Check that the user is allowed to edit this Project
-    # (i.e. they created it) - and if not, show them the door
     redirect_to login_path  unless @project.user_id == @current_user.id
   end
 
@@ -57,7 +55,6 @@ class ProjectsController < ApplicationController
   def update
 
     @project = Project.find params[:id]
-
 
     # Don't perform the edit on the item (i.e. don't change the DB)
     # if the logged in user is not the owner
@@ -67,12 +64,14 @@ class ProjectsController < ApplicationController
     end
     # redirect_to login_path and return unless @project.user_id == @current_user.id
     
+    ##Cloudinary Multi Images
     if params[:project][:images].present?
       params[:project][:images].each do |image|
         req = Cloudinary::Uploader.upload(image)
         @project.images << req["public_id"]
       end
     end
+     ##Cloudinary Single Images
     if params[:project][:image].present?
       req = Cloudinary::Uploader.upload params[:project][:image]
       @project.image = req["public_id"]
