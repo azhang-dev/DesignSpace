@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project 1: Building my First Full-Stack App
 
-Things you may want to cover:
+The app is a project sharing website focused on Architecture and Interior Design. The users are the designer and architects themselves, where they are able to create their own account, store and upload their own projects. 
 
-* Ruby version
 
-* System dependencies
+- Upload personal Projects
+- Create multiple libraries where you can save other people's projects
+- Public Profile - General details about the User and their recent projects
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+* Ruby version: ruby-2.7.0
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+

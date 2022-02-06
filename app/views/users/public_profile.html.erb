@@ -7,25 +7,24 @@
     <%= cl_image_tag(@user.image, class:'public_profile_img') %>
 
     <p>
-    <strong>Studio: </strong>
-    <%= @user.studio %>
+        <strong>Studio: </strong>
+        <%= @user.studio %>
     </p>
 
+    <p>
+        <strong>Studio Location: </strong>
+        <%= @user.location %>
+    </p>
 
     <p>
-    <strong>Studio Location: </strong>
-    <%= @user.location %>
-    </p>
-    <p>
-    <strong>Website: </strong>
+        <strong>Website: </strong>
         <a href="<%= @user.studio_url %>"><%= @user.studio_url %></a>
     </p>
        
     <p>
-    <strong>Followers: </strong>
+        <strong>Followers: </strong>
     </p>
 </div>
-
 
 <h3><strong>Recent Projects: </strong></h3>
 <div class = "user_profile_projects" >

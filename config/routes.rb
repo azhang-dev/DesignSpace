@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get '/profile/:id'            => 'users#public_profile', as: 'public_profile'
   resources :users 
 
+  post 'users/:id/follow', to: 'users#follow', as: "follow_user"
+  post 'users/:id/unfollow', to: 'users#unfollow', as: 'unfollow_user'
 
   get '/projects/new' => 'projects#new',as: 'new_project'
   post '/projects/'    => 'projects#create'
@@ -38,5 +40,8 @@ Rails.application.routes.draw do
   #              PATCH  /mixtapes/:id(.:format)      mixtapes#update
   #              PUT    /mixtapes/:id(.:format)      mixtapes#update
   #              DELETE /mixtapes/:id(.:format)      mixtapes#destroy
+
+
+
 
 end
