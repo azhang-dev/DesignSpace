@@ -27,6 +27,12 @@ class UsersController < ApplicationController
   def show
   end
 
+  def follow
+    @user = User.find params[:id]
+    current_user.
+  end
+
+
   def edit
     redirect_to login_path  unless @current_user.id.present?
   end

@@ -14,11 +14,13 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   # users to be able to follow other users
-  has_many :following_relationships, class_name: 'Follow', foreign_key: 'follower_id'
-  has_many :followed_relationships, class_name: 'Follow', foreign_key: 'followed_id'
+  has_many :followed_users, class_name: 'Follow', foreign_key: 'followee_id'
+  has_many :following_users, class_name: 'Follow', foreign_key: 'follower_id'
   
-  has_many :following, through: :following_relationships, source: :followed
-  has_many :followers, through: :followed_relationships, source: :follower
+  has_many :following, through: :following_users, source: :followed
+  has_many :followers, through: :followee_users, source: :follower
+
+  
 
   def follow_safe( user_to_follow )
 
